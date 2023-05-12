@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,18 +21,18 @@ public class ComponenteControlador {
 	@Autowired
 	private ComponenteRepositorio repositorio;
 	
+	//este metodo retorna todos los componentes
 	@GetMapping("/componentes")
 	public List<Componente> listarTodosLosComponente(){
 		return repositorio.findAll();
 	}
 	
-	@GetMapping("/componentes/{id}")
-	public Optional<Componente> listarPorId(Long id){
-		System.out.println("asd"+id);
-		return repositorio.findById(id);
+	//este metodo retorna un componente por ID
+	@GetMapping("componentes/{id}")
+	public ResponseEntity<Optional<Componente>> obtenerComponentePorId(@PathVariable Long id) {
+		Optional<Componente> componente = repositorio.findById(id);
+		return ResponseEntity.ok(componente);
 	}
 	
-	
-	
-	
 }
+
