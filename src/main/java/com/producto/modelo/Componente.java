@@ -23,6 +23,12 @@ public class Componente {
 	@Column(name = "imagen", length = 200, nullable = false)
 	private String imagen;
 
+	@Column(name = "subcategoria")
+	private String subcategoria;
+
+	@Column(name = "stock")
+	private double stock;
+
 	@Column(name = "precio")
 	private double precio;
 
@@ -34,8 +40,10 @@ public class Componente {
 	}
 
 	public Componente(long id, String categoria, String nombre, String descripcion, String imagen, double precio,
-			boolean destacado) {
+			boolean destacado, String subcategoria, double stock) {
 		super();
+		this.subcategoria = subcategoria;
+		this.stock = stock;
 		this.id = id;
 		this.categoria = categoria;
 		this.nombre = nombre;
@@ -99,6 +107,23 @@ public class Componente {
 
 	public void setDestacado(boolean destacado) {
 		this.destacado = destacado;
+	}
+
+	public void setStock(double stock) {
+		this.stock = stock;
+	}
+
+
+	public double getStock() {
+		return stock;
+	}
+
+	public String getSubcategoria() {
+		return subcategoria;
+	}
+
+	public void setSubcategoria(String subcategoria) {
+		this.subcategoria = subcategoria;
 	}
 
 }
