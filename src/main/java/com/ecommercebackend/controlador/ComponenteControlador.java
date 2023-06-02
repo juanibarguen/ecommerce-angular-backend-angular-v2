@@ -1,11 +1,8 @@
-package com.producto.controlador;
+package com.ecommercebackend.controlador;
 
 import java.util.List;
-import java.util.Map;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -14,12 +11,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.servlet.config.annotation.CorsRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
-import com.producto.repositorio.ComponenteRepositorio;
-import jakarta.annotation.PostConstruct;
-import com.producto.excepciones.ResourceNotFoundException;
-import com.producto.modelo.Componente;
+import com.ecommercebackend.repositorio.ComponenteRepositorio;
+import com.ecommercebackend.excepciones.ResourceNotFoundException;
+import com.ecommercebackend.modelo.Componente;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
